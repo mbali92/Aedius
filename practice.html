@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aedius</title>
+        <link href="Plugins/css/bootstrap.min.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="industry-icons/flaticon.css">
+        <!-- Custom styles for this template font-family: 'Nunito', sans-serif-->
+        <link href="Plugins/css/style.css" rel="stylesheet">
+        <link href="Plugins/css/w3.css" rel="stylesheet">
+        <link href="linecons/style.css" rel="stylesheet">
+        <link href="LineIcons-Package/LineIcons.min.css" rel="stylesheet">
+
+        <style>
+            .wrapper{
+                width: 300px; 
+                background-color: #eee;
+                 margin: 0 auto;
+                 position: relative;
+                 overflow: hidden;
+            }
+            .cols-box{
+                margin-top: 200px;
+                width:600px;
+                margin-left: 0;
+                transition: all 2s;
+            }
+            button{cursor: pointer;}
+           .cols{
+               background-color: #f1f1f1;
+               padding: 0;
+               width: 50%;
+               height: 200px;
+            }
+            .cols:nth-child(1){background-color: grey;}
+            .cols:nth-child(3){background-color: red;}
+        </style>
+    </head>
+<body>
+    
+    <input type="file" id="image"> 
+    <img src="" alt="" id="pic" style="width:200px; height:200px">
+
+    <script>
+        const imageFile = document.getElementById('image');
+        const pic = document.getElementById('pic');
+
+        imageFile.onchange=function() {
+            const reader = new FileReader(); 
+
+            reader.readAsDataURL(this.files[0]); 
+             
+            reader.onload = function() {
+                pic.setAttribute("src",reader.result)   
+            }
+            
+        }
+            
+        
+    </script>
+</body>
+</html>
